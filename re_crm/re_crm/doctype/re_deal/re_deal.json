@@ -1,0 +1,252 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "format:DEAL-{YYYY}-{####}",
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "deal_sb",
+  "title",
+  "lead",
+  "tenant_name",
+  "mobile",
+  "col_break_1",
+  "pipeline_stage",
+  "assigned_agent",
+  "expected_close",
+  "what_sb",
+  "unit",
+  "interest_type",
+  "col_break_2",
+  "expected_value",
+  "probability",
+  "closure_sb",
+  "reservation",
+  "lease_contract",
+  "col_break_3",
+  "commission_entry",
+  "lost_reason",
+  "notes_sb",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "deal_sb",
+   "fieldtype": "Section Break",
+   "label": "Deal"
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Title",
+   "read_only": 1
+  },
+  {
+   "fieldname": "lead",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Lead",
+   "options": "RE Lead"
+  },
+  {
+   "fieldname": "tenant_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Client Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "mobile",
+   "fieldtype": "Data",
+   "label": "Mobile",
+   "options": "Phone"
+  },
+  {
+   "fieldname": "col_break_1",
+   "fieldtype": "Column Break",
+   "label": "Col Break 1"
+  },
+  {
+   "default": "New",
+   "fieldname": "pipeline_stage",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Pipeline Stage",
+   "options": "New\nContacted\nSite Visit Scheduled\nNegotiation\nReservation\nWon\nLost"
+  },
+  {
+   "fieldname": "assigned_agent",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Assigned Agent",
+   "options": "RE Agent"
+  },
+  {
+   "fieldname": "expected_close",
+   "fieldtype": "Date",
+   "label": "Expected Close"
+  },
+  {
+   "fieldname": "what_sb",
+   "fieldtype": "Section Break",
+   "label": "Interest"
+  },
+  {
+   "fieldname": "unit",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Unit",
+   "options": "Unit"
+  },
+  {
+   "default": "Rent",
+   "fieldname": "interest_type",
+   "fieldtype": "Select",
+   "label": "Interest Type",
+   "options": "Rent\nBuy"
+  },
+  {
+   "fieldname": "col_break_2",
+   "fieldtype": "Column Break",
+   "label": "Col Break 2"
+  },
+  {
+   "fieldname": "expected_value",
+   "fieldtype": "Currency",
+   "label": "Expected Value"
+  },
+  {
+   "default": 25,
+   "fieldname": "probability",
+   "fieldtype": "Percent",
+   "label": "Probability"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "closure_sb",
+   "fieldtype": "Section Break",
+   "label": "Closure"
+  },
+  {
+   "fieldname": "reservation",
+   "fieldtype": "Link",
+   "label": "Reservation",
+   "options": "Reservation",
+   "read_only": 1
+  },
+  {
+   "description": "Required to move the deal to Won",
+   "fieldname": "lease_contract",
+   "fieldtype": "Link",
+   "label": "Lease Contract",
+   "options": "Lease Contract"
+  },
+  {
+   "fieldname": "col_break_3",
+   "fieldtype": "Column Break",
+   "label": "Col Break 3"
+  },
+  {
+   "fieldname": "commission_entry",
+   "fieldtype": "Link",
+   "label": "Commission Entry",
+   "options": "Commission Entry",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.pipeline_stage=='Lost'",
+   "fieldname": "lost_reason",
+   "fieldtype": "Small Text",
+   "label": "Lost Reason"
+  },
+  {
+   "fieldname": "notes_sb",
+   "fieldtype": "Section Break",
+   "label": "Notes Sb"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes"
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "is_submittable": 0,
+ "issingle": 0,
+ "istable": 0,
+ "links": [],
+ "modified": "2026-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "RE CRM",
+ "name": "RE Deal",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "RE Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "RE Sales Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "RE Sales Agent",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "lead,tenant_name,unit",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "title",
+ "track_changes": 1
+}

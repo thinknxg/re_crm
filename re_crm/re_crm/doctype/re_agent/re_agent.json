@@ -1,0 +1,161 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "format:AGT-{###}",
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "who_sb",
+  "agent_name",
+  "user",
+  "employee",
+  "col_break_1",
+  "mobile",
+  "is_active",
+  "in_assignment_pool",
+  "plan_sb",
+  "commission_type",
+  "flat_amount",
+  "percent",
+  "slabs"
+ ],
+ "fields": [
+  {
+   "fieldname": "who_sb",
+   "fieldtype": "Section Break",
+   "label": "Agent"
+  },
+  {
+   "fieldname": "agent_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Agent Name",
+   "reqd": 1
+  },
+  {
+   "description": "Desk user this agent logs in as",
+   "fieldname": "user",
+   "fieldtype": "Link",
+   "label": "User",
+   "options": "User",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "label": "Employee",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "col_break_1",
+   "fieldtype": "Column Break",
+   "label": "Col Break 1"
+  },
+  {
+   "fieldname": "mobile",
+   "fieldtype": "Data",
+   "label": "Mobile",
+   "options": "Phone"
+  },
+  {
+   "default": 1,
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Is Active"
+  },
+  {
+   "default": 1,
+   "fieldname": "in_assignment_pool",
+   "fieldtype": "Check",
+   "label": "Include in Round-Robin"
+  },
+  {
+   "fieldname": "plan_sb",
+   "fieldtype": "Section Break",
+   "label": "Commission Plan"
+  },
+  {
+   "default": "Percent",
+   "fieldname": "commission_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Commission Type",
+   "options": "Flat\nPercent\nTiered"
+  },
+  {
+   "depends_on": "eval:doc.commission_type=='Flat'",
+   "fieldname": "flat_amount",
+   "fieldtype": "Currency",
+   "label": "Flat Amount"
+  },
+  {
+   "depends_on": "eval:doc.commission_type=='Percent'",
+   "fieldname": "percent",
+   "fieldtype": "Percent",
+   "label": "Percent of Contract Value"
+  },
+  {
+   "depends_on": "eval:doc.commission_type=='Tiered'",
+   "fieldname": "slabs",
+   "fieldtype": "Table",
+   "label": "Slabs",
+   "options": "Commission Slab"
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "is_submittable": 0,
+ "issingle": 0,
+ "istable": 0,
+ "links": [],
+ "modified": "2026-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "RE CRM",
+ "name": "RE Agent",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "RE Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "RE Sales Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "RE Sales Agent",
+   "share": 1,
+   "write": 0
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "agent_name",
+ "track_changes": 1
+}
