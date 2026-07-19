@@ -41,7 +41,7 @@
    "in_list_view": 1,
    "label": "Deal",
    "options": "RE Deal",
-   "reqd": 1
+   "reqd": 0
   },
   {
    "fieldname": "lease_contract",
