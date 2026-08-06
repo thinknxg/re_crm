@@ -1,7 +1,7 @@
 {
  "app": "re_crm",
  "charts": [],
- "content": "[]",
+ "content": "[{\"id\": \"blk11\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>RE CRM</b></span>\", \"col\": 12}}, {\"id\": \"blk12\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Leads\", \"col\": 3}}, {\"id\": \"blk13\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Deals\", \"col\": 3}}, {\"id\": \"blk14\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Reservations\", \"col\": 3}}, {\"id\": \"blk15\", \"type\": \"card\", \"data\": {\"card_name\": \"Pipeline\", \"col\": 4}}, {\"id\": \"blk16\", \"type\": \"card\", \"data\": {\"card_name\": \"Agents & Commission\", \"col\": 4}}, {\"id\": \"blk17\", \"type\": \"card\", \"data\": {\"card_name\": \"Settings\", \"col\": 4}}, {\"id\": \"blk18\", \"type\": \"card\", \"data\": {\"card_name\": \"WhatsApp\", \"col\": 4}}]",
  "creation": "2026-08-06 10:20:52.560109",
  "custom_blocks": [],
  "docstatus": 0,
@@ -161,7 +161,7 @@
    "type": "Link"
   }
  ],
- "modified": "2026-08-06 10:33:27.706985",
+ "modified": "2026-08-06 11:15:01.437051",
  "modified_by": "Administrator",
  "module": "RE CRM",
  "name": "RE CRM",
